@@ -3,7 +3,7 @@
   "version": "0.0.4",
   "description": "Combine several JSON files with Gulp",
   "license": "MIT",
-  "repository": "https://github.com/daviddiasfront/gulp-json-concat",
+  "repository": "https://github.com/EndyKaufman/gulp-json-concat",
   "author": {
     "name": "David Dias",
     "email": "daviddiasfront@gmail.com",
