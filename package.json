@@ -8,9 +8,9 @@
     "url": "https://github.com/EndyKaufman/gulp-json-concat"
   },
   "author": {
-    "name": "David Dias",
-    "email": "daviddiasfront@gmail.com",
-    "url": "https://www.david-dias.com"
+    "name": "Ilshat Khamitov",
+    "email": "admin@site15.ru",
+    "url": "http://site15.ru"
   },
   "engines": {
     "node": ">=0.10.0"
@@ -29,14 +29,14 @@
   "dependencies": {
     "gulp-util": "^3.0.4",
     "jsonlint": "^1.6.2",
-    "through": "^2.3.8"
+    "through": "^2.3.8",
+    "deepmerge": "^0.2.10"
   },
   "devDependencies": {
     "event-stream": "*",
     "jshint": "^2.7.0",
     "mocha": "^2.2.5",
-    "should": "^6.0.3",
-    "deepmerge": "^0.2.10"
+    "should": "^6.0.3"
   },
   "readme": "# [gulp](https://gulpjs.com)-json-concat\n[![Build Status](https://travis-ci.org/daviddiasfront/gulp-json-concat.svg?branch=master)](https://travis-ci.org/daviddiasfront/gulp-json-concat)\n[![Dependencies](https://david-dm.org/daviddiasfront/gulp-json-concat.png)](https://david-dm.org/daviddiasfront/gulp-json-concat)\n[![npm module downloads per month](http://img.shields.io/npm/dm/gulp-json-concat.svg)](https://www.npmjs.org/package/gulp-json-concat)\n\n> Combine several JSON files with Gulp\n\ngulp-json-concat is a fork of [gulp-jsoncombine](https://www.npmjs.com/package/gulp-jsoncombine) with new few options.\n\n## Install\n\n[![NPM](https://nodei.co/npm/gulp-json-concat.png?compact=true)](https://www.npmjs.org/package/gulp-json-concat)\n\n```shell\n$ npm install --save-dev gulp-json-concat\n```\n\n## Usage\n\nYou can combine json files that are in subfolders. The json generated will remove the name of these folders to keep only the name of the file.\n\n```js\nvar gulp = require('gulp');\nvar jsonConcat = require('gulp-json-concat');\n\ngulp.task('json', function () {\n  return gulp.src('db/**/*.json')\n    .pipe(jsonConcat('db.json',function(data){\n      return new Buffer(JSON.stringify(data));\n    }))\n    .pipe(gulp.dest('dist/json'));\n});\n```\n\n## API\n\n### jsonConcat(fileName, processor)\n\n#### fileName\nType: `String`\n\nThe output filename.\n\n#### processor\nType: `Function`\n\nThe function that will be called with the dictionary containing all the data from the processes JSON files, where the keys of the dictionary, would be the names of the files (sans the '.json' postfix).\n\nThe function should return a new `Buffer` that would be writter to the output file.\n\n## Changelog\n\n### 0.0.4 Add jsonlint\n* Analyse json files and show exactly wehre is the error\n\n### 0.0.1 Initial release\n* initial code\n\n## License\n\nMIT © 2015 [David Dias](http://www.david-dias.com)\n",
   "readmeFilename": "README.md",
@@ -46,8 +46,8 @@
   "homepage": "https://github.com/EndyKaufman/gulp-json-concat",
   "_id": "gulp-json-concat@0.0.4",
   "dist": {
-    "shasum": "5952cae57cfb647f0131c071a78f449557b5021f"
+    "shasum": "acd4d72a443868a7b46296f259c07e52bf4da01d"
   },
-  "_resolved": "git://github.com/EndyKaufman/gulp-json-concat.git#e74af8a8ca15334694768bf2833ec7fa6e616dab",
+  "_resolved": "git://github.com/EndyKaufman/gulp-json-concat.git#2ab159d4d8efe3220e27a382205a4423fd76880d",
   "_from": "gulp-json-concat@git://github.com/EndyKaufman/gulp-json-concat.git#master"
 }

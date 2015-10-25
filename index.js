@@ -24,9 +24,7 @@ module.exports = function(fileName, converter, concatContent) {
     var firstFile = null;
     //We keep track of when we should skip the conversion for error cases
     var skipConversion = false;
-
     function bufferContents(file) {
-
         try {
             jsonlint.parse(String(file.contents));
         } catch (err) {
@@ -94,6 +92,8 @@ module.exports = function(fileName, converter, concatContent) {
                     showStack: true
                 }));
             }
+        } else {
+            converter({});
         }
         this.emit('end');
     }
